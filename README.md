@@ -11,6 +11,6 @@ checkout the meshtastic firmware version you want to build (example: v2.5.20)
   
 change to the directory and run the container (example: build tbeam)
 
-``cd firmware; docker run -e HOME=`pwd` -u $UID -w `pwd` -v `pwd`:`pwd` --rm -it docker.io/library/meshtastic-bakery:6.1.16 pio run -e tbeam``
+``cd firmware; docker run -e PIO_ARCH=esp32 -e PIO_ENV=tbeam -e HOME=`pwd` -u $UID -w `pwd` -v `pwd`:`pwd` --rm -it docker.io/library/meshtastic-bakery:6.1.16``
   
-after the command finishes you'll find your firmware in the .pio/build/tbeam directory.
+after the command finishes you'll find your firmware in the release directory.
